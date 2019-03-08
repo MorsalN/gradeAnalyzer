@@ -2,12 +2,13 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grade Analyzer</title>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
@@ -15,7 +16,20 @@
 
 
 <style>
-* {
+  *
+body.container-fluid{
+  /*background-color: #7bae9d;*/
+  background-color: #ffeaf6;
+  /*background-color: #00997a;*/
+  color: #0a0a0f;
+  /*color: #5b5b5b;*/
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  width: 100%;
+  /*margin-left: 25%*/
+}
+
+  {
   box-sizing: border-box;
 }
 
@@ -24,6 +38,7 @@
   float: left;
   width: 25%;
   padding: 5%;
+
 }
 
 /* Clear floats after the columns */
@@ -34,31 +49,58 @@
 }
 
 .titles {
-  padding: 1%;
+  margin: 50px;
 }
 
 .rcorners2 {
-  border-radius: 10%;
-  border: 2px solid #4286f4;
-  padding: 20px; 
-  width: 200px;
-  height: 350px;  
+  border-radius: 25px;
+  border: 2px solid #b5b5b5;
+  /*padding: 1%; */
+  width: 80%;
+  height: 60%;  
+  margin-left: 5%
+}
+
+.result {
+  margin-left:30%;
+  border-radius: 20px;
+  border: 2px solid #239f85;
+  background-color: #f4faf9;
+  /*padding: 1%; */
+  width: 80%;
+  height: 10%;  
+  margin-left: 5%;
+  margin-top: 1%;
+  /*position: center;*/
 }
 </style>
+
+
+
+
 </head>
+
+<body class = "container-fluid">
+      <div id="menu" class="navbar navbar-default fixed-top">
+         <div class="container-fluid"><a href=#mainContent class="menu-item"></a><a href="/" class="menu-item"><h2>Grade Analyzer</h2></a> 
+          
+          <form action="/finalgrade"><input 
+          style=" padding: 10px; background-color: #fcbfe4; color: black; font-weight: bold; border-color: darkgrey; border-radius: 20px; margin-left: 75%; border-width: 3px;" 
+          type="submit" value="Final Grade Calculator"> 
+        </form></div>
+
+      </div>
+
+
 <body>
 
 <form>
 
 <div class="titles">
   
-  <div>
+<!--   <header>
   <h2>Grade Analyzer</h2>
-  </div>
-
-	<div>
-		<h3>Course Name</h3>
-	</div>
+  </header> -->
 
 </div>
 
@@ -67,7 +109,23 @@
 
 <div class="row">
 
-<!-- <div class="rcorners2"></div> -->
+<div class="rcorners2" style="background-color: #ffffff;">
+
+	<div style="margin-left: 5%">
+		<h3>Course Name: </h3>
+	</div>
+
+
+<!-- <form>
+  <select id="mySelect" size="8">
+    <option>Apple</option>
+    <option>Pear</option>
+    <option>Banana</option>
+    <option>Orange</option>
+  </select>
+</form> -->
+
+<!-- <p>Click the button to add a "Kiwi" option at the end of the dropdown list.</p> -->
 
   <div class="column" style="background-color:#ffffff;">
     <h4>Assessment</h4>
@@ -75,29 +133,37 @@
 	<div><input type="text" placeholder="ex.Assignment" id="assignment"></input></div>
 	<div><input type="text" placeholder="ex.Midterm" id="midterm"></input></div>
 	<div><input type="text" placeholder="ex.Final" id="final"></input></div>
+  <button type="button" onclick="myFunction()"> + Add Assessment</button>
   </div>
 
   <div class="column" style="background-color:#ffffff;">
     <h4>Grade (%)</h4>
-	<div><input type="text" placeholder="%" id="per1"></input></div>
-	<div><input type="text" placeholder="%" id="per2"></input></div>
-	<div><input type="text" placeholder="%" id="per3"></input></div>
-	<div><input type="text" placeholder="%" id="per4"></input></div>
+	<div><input type="text" placeholder="" id="per1"></input></div>
+	<div><input type="text" placeholder="" id="per2"></input></div>
+	<div><input type="text" placeholder="" id="per3"></input></div>
+	<div><input type="text" placeholder="" id="per4"></input></div>
   </div>
 
   <div class="column" style="background-color:#ffffff;">
     <h4>Grade Weight (%)</h4>
-	<div><input type="text" placeholder="%" id="per1"></input></div>
-	<div><input type="text" placeholder="%" id="per2"></input></div>
-	<div><input type="text" placeholder="%" id="per3"></input></div>
-	<div><input type="text" placeholder="%" id="per4"></input></div>
+	<div><input type="text" placeholder="" id="per1"></input></div>
+	<div><input type="text" placeholder="" id="per2"></input></div>
+	<div><input type="text" placeholder="" id="per3"></input></div>
+	<div><input type="text" placeholder="" id="per4"></input></div>
   </div>
-
-
-
 </div>
 
 
+
+<!-- Grade Weight: <input type="text"> -->
+<div class="result" style="background-color:#f5fff4;">
+<p><div class="currentgrade" style="margin-left: 25%"><h3>Your Current Grade: </h3><span></span></div></p>
+</div>
+</div>
 </form>
+
+
 </body>
 </html>
+
+
