@@ -1,0 +1,103 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade Analyzer</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 5%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.titles {
+  padding: 1%;
+}
+
+.rcorners2 {
+  border-radius: 10%;
+  border: 2px solid #4286f4;
+  padding: 20px; 
+  width: 200px;
+  height: 350px;  
+}
+</style>
+</head>
+<body>
+
+<form>
+
+<div class="titles">
+  
+  <div>
+  <h2>Grade Analyzer</h2>
+  </div>
+
+	<div>
+		<h3>Course Name</h3>
+	</div>
+
+</div>
+
+
+
+
+<div class="row">
+
+<!-- <div class="rcorners2"></div> -->
+
+  <div class="column" style="background-color:#ffffff;">
+    <h4>Assessment</h4>
+	<div><input type="text" placeholder="ex.Quiz" id="quiz"></input></div>
+	<div><input type="text" placeholder="ex.Assignment" id="assignment"></input></div>
+	<div><input type="text" placeholder="ex.Midterm" id="midterm"></input></div>
+	<div><input type="text" placeholder="ex.Final" id="final"></input></div>
+  </div>
+
+  <div class="column" style="background-color:#ffffff;">
+    <h4>Grade (%)</h4>
+	<div><input type="text" placeholder="%" id="per1"></input></div>
+	<div><input type="text" placeholder="%" id="per2"></input></div>
+	<div><input type="text" placeholder="%" id="per3"></input></div>
+	<div><input type="text" placeholder="%" id="per4"></input></div>
+  </div>
+
+  <div class="column" style="background-color:#ffffff;">
+    <h4>Grade Weight (%)</h4>
+	<div><input type="text" placeholder="%" id="per1"></input></div>
+	<div><input type="text" placeholder="%" id="per2"></input></div>
+	<div><input type="text" placeholder="%" id="per3"></input></div>
+	<div><input type="text" placeholder="%" id="per4"></input></div>
+  </div>
+
+
+
+</div>
+
+
+</form>
+</body>
+</html>
