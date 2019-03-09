@@ -9,8 +9,7 @@ var session = require('express-session');
 var port = 4000;
 
 var routes = require('./routes/index.js');
-//  var user = require('./routes/user'); //requires user module from user.js
-// var messages = require('./routes/messages');
+// var grade = require('./routes/webpage.js'); 
 
 var app = express();
 
@@ -26,8 +25,7 @@ app.use(cookieParser());
 app.use(session({secret: "Your secret key"}));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', routes);
-// app.use('/finalgrades',finalgrades);
-
+// app.use('/grades',routes);
 
 
 
