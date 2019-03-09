@@ -26,8 +26,8 @@ app.use(cookieParser());
 app.use(session({secret: "Your secret key"}));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use('/', routes);
-// # app.use('/user',user);
-// # app.use('/messages',messages);
+// app.use('/finalgrades',finalgrades);
+
 
 
 

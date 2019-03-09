@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript"></script>
+  <script src="/grade.js"></script>
 
 
 <style>
@@ -117,27 +119,24 @@ body.container-fluid{
 	</div>
 
 
-<!-- <form>
+<form>
   <select id="mySelect" size="8">
-    <option>Apple</option>
-    <option>Pear</option>
-    <option>Banana</option>
-    <option>Orange</option>
+
   </select>
-</form> -->
+</form>
+
 
 <!-- <p>Click the button to add a "Kiwi" option at the end of the dropdown list.</p> -->
 
-  <div class="column" style="background-color:#ffffff;">
+  <div class="column" id="assessment" style="background-color:#ffffff;">
     <h4>Assessment</h4>
 	<div><input type="text" placeholder="ex.Quiz" id="quiz"></input></div>
 	<div><input type="text" placeholder="ex.Assignment" id="assignment"></input></div>
 	<div><input type="text" placeholder="ex.Midterm" id="midterm"></input></div>
 	<div><input type="text" placeholder="ex.Final" id="final"></input></div>
-  <button type="button" onclick="myFunction()" style="/*padding: 10px;*/ background-color: #fcbfe4; color: black; margin-top: 4%; border-color: darkgrey; border-radius: 20px;border-width: 2px;"> + Add Assessment </button>
   </div>
 
-  <div class="column" style="background-color:#ffffff;">
+  <div class="column" id="grade" style="background-color:#ffffff;">
     <h4>Grade (%)</h4>
 	<div><input type="text" placeholder="" id="per1"></input></div>
 	<div><input type="text" placeholder="" id="per2"></input></div>
@@ -145,7 +144,7 @@ body.container-fluid{
 	<div><input type="text" placeholder="" id="per4"></input></div>
   </div>
 
-  <div class="column" style="background-color:#ffffff;">
+  <div class="column" id="gradeweight" style="background-color:#ffffff;">
     <h4>Grade Weight (%)</h4>
 	<div><input type="text" placeholder="" id="per1"></input></div>
 	<div><input type="text" placeholder="" id="per2"></input></div>
@@ -154,11 +153,11 @@ body.container-fluid{
   </div>
 </div>
 
-
+ <button type="button" id="assess" style="/*padding: 10px;*/ background-color: #fcbfe4; color: black; margin-top: 4%; border-color: darkgrey; border-radius: 20px;border-width: 2px;"> + Add Assessment </button>
 
 <!-- Grade Weight: <input type="text"> -->
 <div class="result" style="background-color:#f5fff4;">
-<p><div class="currentgrade" style="margin-left: 38%"><h3>Your Current Grade: </h3><span></span></div></p>
+<p><div class="currentgrade" id="add" style="margin-left: 38%"><h3>Your Current Grade: </h3><span></span></div></p>
 </div>
 </div>
 </form>
