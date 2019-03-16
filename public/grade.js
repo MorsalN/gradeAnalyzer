@@ -27,21 +27,41 @@ $( document ).ready(function() {
   $gradeweight.addEventListener('input', typeHandler) // register for oninput
   $gradeweight.addEventListener('propertychange', typeHandler) // for IE8  
 
-  $("input").change(function() {
-  	var grade1=parseFloat(document.getElementById('weight1').value);
-    var grade2=parseFloat(document.getElementById('weight2').value);
-    var grade3=parseFloat(document.getElementById('weight3').value);
-    var grade4=parseFloat(document.getElementById('weight4').value);
-    console.log(grade1, grade2, grade3, grade4);
-    grade1 = !isNaN(grade1) ? grade1 : 0;
-    grade2 = !isNaN(grade2) ? grade2 : 0;
-    grade3 = !isNaN(grade3) ? grade3 : 0;
-    grade4 = !isNaN(grade4) ? grade4 : 0;
-    var total=grade1+grade2+grade3+grade4;
-    console.log("the total", total)
+// var gradearray = 
+// var gradeweights = 
+
+// foreach x in gradearray
+
+// totalgrade = (grade/100)*gradeweight + 
+
+
+  $(".rcorners2").on('change', 'input', function() {
+   // Store all grades inside an array.
+    var grades = [];
+    $('#grade input').each(function() {
+      // console.log('line 62', parseInt($(this).val()));
+      var currentgrade = parseInt($(this).val()); // this is turning the grades from a string to an integer 
+      currentgrade = isNaN(currentgrade) ? 0 : currentgrade;
+      grades.push(currentgrade); // this is taking the grades and actually puttin them into the array 
+    });
+
+    var weights = [];
+    $('#gradeweight input').each(function() {
+      var currentweight = parseInt($(this).val());
+      currentweight = isNaN(currentweight) ? 0 : currentweight
+      weights.push(currentweight);
+    });
+
+    var total = 0;
+    for(var i=0; i< grades.length; i++) {
+      total += (grades[i]/100)*weights[i];
+    }
+
     $(".currentgrade").text(total)
   })
 });
+
+
 
 
 // $("#send").click(function(e) {
