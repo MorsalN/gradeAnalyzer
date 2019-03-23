@@ -34,7 +34,6 @@ $( document ).ready(function() {
 
 // totalgrade = (grade/100)*gradeweight + 
 
-
   $(".rcorners2").on('change', 'input', function() {
    // Store all grades inside an array.
     var grades = [];
