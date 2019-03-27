@@ -28,8 +28,7 @@ app.use('/', routes);
 // app.use('/grades',routes);
 
 
-
-app.listen(port, function() {
+app.listen(process.env.PORT || port, function() {
   console.log('Listening in on port' + port);
 });
 
